@@ -6,4 +6,7 @@
 .container {
   height: 100vh;
   background-color: orangered;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
