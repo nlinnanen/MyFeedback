@@ -3,11 +3,12 @@ import "./AnswerButton.scss"
 
 interface Props {
   text: string
+  onClick: () => void
 }
 
-const AnswerButton = ({ text }: Props) => {
+const AnswerButton = ({ text, onClick }: Props) => {
   return (
-      <button className='btn'>{text}</button>
+      <button className='btn' onClick={onClick}>{text}</button>
   )
 }
 
