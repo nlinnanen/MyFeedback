@@ -3,12 +3,7 @@
   margin: 0;
 }
 
-.grid {
-  background-color: orangered;
-  width: 100%;
+.container {
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  
+  background-color: orangered;
 }

@@ -1,18 +1,16 @@
 import React from 'react'
-
 import './App.scss'
-import AnswerButton from './components/AnswerButton'
+import Questionare from './components/Questionare'
 
 const App = () => {
-  const answers = ['ensimmäinen', 'toinen', 'kolmas', 'neljäs', 'viides']
 
   return (
-    <div className="grid">
-      {answers.map((a, i) => (
-        <AnswerButton key={i} text={a} />
-        ))}
+    <div className='container'>
+      <Questionare/>
+      <input/>
     </div>
   )
+
 }
 
 export default App
