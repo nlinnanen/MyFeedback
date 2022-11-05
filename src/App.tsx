@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
+
+import './App.scss'
 
 const App = () => {
   return (
-    <div>
-      FeelGood
-    </div>
-  );
+    <div>Omstart</div>
+  )
 }
 
-export default App;
+export default App
