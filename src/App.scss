@@ -1,14 +1,14 @@
 * {
   padding: 0;
   margin: 0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
   height: 100vh;
   width: 100vw;
-  background-color: orangered;
+  background-color: white;
   display: flex;
   flex-direction: column;
   justify-items: stretch;
-  align-items: stretch;
 }

@@ -8,7 +8,9 @@ interface Props {
 
 const AnswerButton = ({ text, onClick }: Props) => {
   return (
-      <button className='btn' onClick={onClick}>{text}</button>
+    <div className='answerButtonContainer'>
+      <button className='answerBtn' onClick={onClick}>{text}</button>
+    </div>
   )
 }
 

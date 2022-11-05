@@ -1,0 +1,73 @@
+.grid {
+  height: 100%;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+}
+
+.answers {
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+
+  align-items: stretch;
+  justify-content: space-evenly;
+  transition: transform 2s;
+}
+
+
+.invisible {
+  transform: translateX(-100vw);
+}
+
+.results {
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+
+  align-items: stretch;
+  justify-content: space-evenly;
+  transition: transform 2s;
+  transition-delay: 1s;
+}
+
+.score-description {
+  font-size: 2em;
+}
+
+.course-code {
+  font-size: 3em;
+}
+
+.course-title {
+  font-size: 4em;
+}
+
+.score {
+  font-size: 6em;
+}
+
+.left-col {
+  margin: 1em;
+  padding: 1em;
+}
+
+.chart-area {
+  margin: 1em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-evenly;
+}
+
+.response-trend {
+  margin: 1em;
+  width: 100%;
+}
+
+.current-responses {
+  margin: 1em;
+}

@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import './App.scss'
 import Questionare from './components/Questionare'
+import Teacher from './components/Teacher'
 
 const App = () => {
   return (
@@ -12,7 +13,14 @@ const App = () => {
           element={
             <div className="container">
               <Questionare />
-              <input />
+            </div>
+          }
+        />
+        <Route
+          path="/teacher"
+          element={
+            <div className="container">
+              <Teacher />
             </div>
           }
         />
