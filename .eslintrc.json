@@ -21,6 +21,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "react/react-in-jsx-scope": "off",
         "func-style": ["error", "expression"]
     }
 }
