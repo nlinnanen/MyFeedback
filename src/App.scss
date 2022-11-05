@@ -4,7 +4,7 @@
 }
 
 .container {
-  height: 100vh;
+  min-height: 100vh;
   background-color: orangered;
   display: flex;
   flex-direction: column;
