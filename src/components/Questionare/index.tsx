@@ -8,14 +8,14 @@ const Questionare = () => {
   return (
     <div className="grid">
       {!hasAnswered && (
-        <div>
+        <div className='answers'>
           {' '}
           {ANSWERS.map((a, i) => (
             <AnswerButton key={i} text={a} onClick={() => setHasAnswered(true)} />
           ))}
         </div>
       )}
-      {hasAnswered && <div>tulokset</div>}
+      {hasAnswered && <div className='results'>tulokset</div>}
     </div>
   )
 }

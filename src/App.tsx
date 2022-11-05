@@ -5,7 +5,6 @@ import Questionare from './components/Questionare'
 
 const App = () => {
   return (
-    <div className="top">
       <Routes>
         <Route path="/admin" element={<div className="container">Admin</div>} />
         <Route
@@ -18,7 +17,6 @@ const App = () => {
           }
         />
       </Routes>
-    </div>
   )
 }
 
