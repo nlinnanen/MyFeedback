@@ -11,7 +11,7 @@ const App = () => {
         <Route
           path="/"
           element={
-            <div className="container">
+            <div className="questionare-container">
               <Questionare />
             </div>
           }

@@ -1,38 +1,25 @@
-.grid {
-  position: relative;
-  height: 100%;
-  width: 200vw;
-  overflow: hidden;
-  display: flex;
+.header {
+  padding: 2rem;
+  font-size: 2.2rem;
+}
+
+.questionareGrid {
+  width: 80%;
+  height: 90%;
+  display: grid;
+  grid-template-rows: 1fr 10fr;
 }
 
 .answers {
-  position: absolute;
-  z-index: 0;
-  height: 100%;
-  width: 100vw;
   display: flex;
   flex-direction: column;
-
-  justify-content: space-evenly;
-  transition: all 1.5s !important;
+  justify-content: space-around;
+  background-color: white;
+  border-radius: 2rem;
+  box-shadow: 10px 10px 10px rgb(58, 58, 58);
+  padding: 2rem 1rem 1rem 1rem;
 }
 
-
-.invisible {
-  transform: translateX(-300vw);
-}
-
-.results {
-  position: absolute;
-  z-index: 10;
-  height: 100%;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-
-  align-items: stretch;
-  justify-content: space-evenly;
-  transition: all 1s !important;
-  transition-delay: 1.2s !important;
-}
+// .answers:first-letter {
+//   text-transform: uppercase;
+// }

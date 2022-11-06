@@ -1,24 +1,40 @@
 import React, { useState } from 'react'
+import uuid from 'react-uuid'
 import AnswerButton from './AnswerButton'
 import './Questionare.scss'
-import Result from './Result'
+import { usePoll } from '../../hooks/usePoll'
+import { POLL_ID } from '../../utils/constants'
+import { vote } from '../../utils/db'
 
-const ANSWERS = ['ensimmäinen', 'toinen', 'kolmas', 'neljäs', 'viides']
-const RESULTS = [10, 20, 30, 40, 100]
 const Questionare = () => {
   const [hasAnswered, setHasAnswered] = useState<boolean>(false)
+  const [data, loading, error] = usePoll(POLL_ID)
+  
+  if(loading || !data) {
+    return null
+  }
+  const {question, options } = data ?? {}
+
+  const totalVotes = options.reduce((reducer: number, [, votes]) => reducer + votes, 0)
+
   return (
-    <div className="grid">
-      <div className={`answers ${!hasAnswered ? '' : 'invisible'}`}>
+    <div className="questionareGrid">
+        <h1 className="header">{question}</h1>
+      <div className="answers">
         {' '}
-        {ANSWERS.map((a, i) => (
-          <AnswerButton key={i} text={a} onClick={() => setHasAnswered(true)} />
-        ))}
-      </div>
-      <div className={`results ${hasAnswered ? '' : 'invisible'}`}>
-        {ANSWERS.map((a, i) => (
-          <Result key={i} percent={RESULTS[i]} text={a}/>
-        ))}
+        {options.map(([name, votes], index) => {
+          console.log(votes)
+          return <AnswerButton
+            key={name}
+            text={name}
+            percentage={Math.round(votes * 100/totalVotes)}
+            onClick={() => {
+              setHasAnswered(true)
+              vote(data, index)
+            }}
+            hasClicked={hasAnswered}
+          />
+        })}
       </div>
     </div>
   )

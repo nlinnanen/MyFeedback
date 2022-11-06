@@ -1,8 +1,18 @@
+@font-face {
+  font-family: 'Signika';
+  src: local('Signika'), url(../fonts/Signika-VariableFont_wght.ttf) format('truetype');
+}
+
 * {
   padding: 0;
   margin: 0;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Signika; //'Segoe UI', Tahoma, Geneva, Verdana;
 }
+
+body {
+  background: white;
+}
+
 
 .container {
   height: 100vh;
@@ -11,4 +21,16 @@
   display: flex;
   flex-direction: column;
   justify-items: stretch;
+  
+}
+
+.questionare-container {
+  height: 100vh !important;
+  width: 100vw !important;
+  background: rgba(175, 175, 175, 0.725);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }

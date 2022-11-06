@@ -1,20 +1,41 @@
-
-.answerBtn{
-  height: 80%;
-  width: 97%;
-  border-radius: 0 16px 16px 0;
-  background-color: orange;
-  border: none;
-  box-shadow: none;
+.answerBtn {
+  background-color: #1d7cdc;
   color: white;
-  font-size: 2rem;
-  text-transform: capitalize;
-  padding: 1rem;
-  cursor: pointer;
+  box-shadow: 2px 2px 10px rgb(111, 111, 111) !important;
 }
 
-.answerButtonContainer {
-  margin-top: 1rem;
-  height: 100%;
-  width: 100%;
+.results {
+  background-color: white;
+  color: black;
+  box-shadow: none;
+}
+
+.commonstyles {
+  position: relative;
+  border: none;
+  box-shadow: none;
+  font-size: 1.25rem;
+  text-align: left;
+  margin: 1rem .5rem;
+  padding: auto;
+  flex-grow: 1;
+  padding: 0 2rem;
+  border-radius: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.resultProgressBar {
+  height: 0.4rem !important;
+}
+
+.commonstyles::before {
+  position: absolute;
+  top: -1rem;
+  left: 1rem;
+  right: 1rem;
+  content: "";
+  height: 2px;
+  background-color: rgba(170, 170, 170, 0.641);
 }
