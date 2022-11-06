@@ -3,6 +3,8 @@ import './Teacher.scss'
 import ProgressBarCircle from 'react-customizable-progressbar'
 import ProgressBar from '@ramonak/react-progress-bar'
 import Trend from 'react-trend'
+import weightedMean from 'weighted-mean'
+import _ from 'lodash'
 import { usePoll } from '../../hooks/usePoll'
 import { POLL_ID } from '../../utils/constants'
 
@@ -30,6 +32,13 @@ const Questionare = () => {
   const { question, options } = data ?? {}
 
   const totalVotes = options.reduce((reducer, [, votes]) => reducer + votes, 0)
+  const voteDistribution = options.map(option => option[1])
+  console.log("vote distribution: ", voteDistribution)
+  const weights = _.range(voteDistribution.length).map(n => 1 - (n / voteDistribution.length))
+  const votes = voteDistribution.map(n => n / voteDistribution.length)
+  console.log("weights: ", weights)
+  const wellnessScore = Math.round(weightedMean(_.zip(votes, weights)) * 100)
+  console.log(wellnessScore)
 
   return (
     <div className="grid">
@@ -39,7 +48,7 @@ const Questionare = () => {
         <div>
           <ProgressBarCircle
             radius={100}
-            progress={66}
+            progress={wellnessScore}
             cut={100}
             rotate={140}
             padding={0}
@@ -50,7 +59,7 @@ const Questionare = () => {
             className="progressCircle"
           >
             <div className="indicator score">
-              <div>66</div>
+              <div>{wellnessScore}</div>
             </div>
           </ProgressBarCircle>
           <p className="score-description circle-desc">Wellbeing score</p>
@@ -64,15 +73,14 @@ const Questionare = () => {
       <div className="chart-area">
         <div className="current-responses">
           <h2 className="subheader">{question}</h2>
-          {Object.entries(options).map(asdfasfasdf => {
+          {options.map(([name, votes]) => {
             //console.log("name, votes:", name, votes)
-            const [name, votes] = asdfasfasdf
             return (
               <div key={name} className="progress-holder">
                 <ProgressBar
                   key={name}
                   animateOnRender
-                  completed={(votes * 100) / totalVotes}
+                  completed={Math.round((votes * 100) / totalVotes)}
                   bgColor="#1d7cdc"
                 />
                 <p className="score-description">{name}</p>

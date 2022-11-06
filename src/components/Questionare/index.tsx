@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import _ from 'lodash'
 import AnswerButton from './AnswerButton'
 import './Questionare.scss'
 import { usePoll } from '../../hooks/usePoll'
@@ -22,7 +23,6 @@ const Questionare = () => {
       <div className="answers">
         {' '}
         {options.map(([name, votes], index) => {
-          console.log(votes)
           return (
             <AnswerButton
               key={name}

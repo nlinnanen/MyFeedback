@@ -9,10 +9,8 @@ type PollQuestionRequest = [
 ]
 
 export const usePoll = (pollId: string): PollQuestionRequest => {
-  console.log("pollId:", pollId)
-  const asdfasdf = useObjectVal(
+  const pollQuestionRequest = useObjectVal(
     getPollRef(pollId)
   ) as unknown as PollQuestionRequest
-  console.log("asdfasdf", asdfasdf)
-  return asdfasdf
+  return pollQuestionRequest
 }
