@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import _ from 'lodash'
 import AnswerButton from './AnswerButton'
 import './Questionare.scss'
 import { usePoll } from '../../hooks/usePoll'
@@ -8,7 +7,7 @@ import { vote } from '../../utils/db'
 
 const Questionare = () => {
   const [hasAnswered, setHasAnswered] = useState<boolean>(false)
-  const [data, loading, error] = usePoll(POLL_ID)
+  const [data, loading] = usePoll(POLL_ID)
 
   if (loading || !data) {
     return null

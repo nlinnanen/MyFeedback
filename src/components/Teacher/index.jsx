@@ -8,22 +8,9 @@ import _ from 'lodash'
 import { usePoll } from '../../hooks/usePoll'
 import { POLL_ID } from '../../utils/constants'
 
-const Questionare = () => {
-  const [data, loading, error] = usePoll(POLL_ID)
+const Teacher = () => {
+  const [data, loading] = usePoll(POLL_ID)
 
-  const refinedData = React.useMemo(() => {
-    if (loading) {
-      return {
-        score: 0,
-        responses: [],
-      }
-    } else {
-      return {
-        score: 0,
-        responses: [],
-      }
-    }
-  }, [data, loading])
 
   if (loading || !data) {
     return null
@@ -37,7 +24,7 @@ const Questionare = () => {
   const weights = _.range(voteDistribution.length).map(n => 1 - (n / voteDistribution.length))
   const votes = voteDistribution.map(n => n / voteDistribution.length)
   console.log("weights: ", weights)
-  const wellnessScore = Math.round(weightedMean(_.zip(votes, weights)) * 100)
+  const wellnessScore = Math.round(weightedMean(_.zip(votes, weights)) * 50)
   console.log(wellnessScore)
 
   return (
@@ -112,4 +99,4 @@ const Questionare = () => {
   )
 }
 
-export default Questionare
+export default Teacher
