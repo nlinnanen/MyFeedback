@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import uuid from 'react-uuid'
 import AnswerButton from './AnswerButton'
 import './Questionare.scss'
 import { usePoll } from '../../hooks/usePoll'
@@ -9,31 +8,33 @@ import { vote } from '../../utils/db'
 const Questionare = () => {
   const [hasAnswered, setHasAnswered] = useState<boolean>(false)
   const [data, loading, error] = usePoll(POLL_ID)
-  
-  if(loading || !data) {
+
+  if (loading || !data) {
     return null
   }
-  const {question, options } = data ?? {}
+  const { question, options } = data ?? {}
 
   const totalVotes = options.reduce((reducer: number, [, votes]) => reducer + votes, 0)
 
   return (
     <div className="questionareGrid">
-        <h1 className="header">{question}</h1>
+      <h1 className="header">{question}</h1>
       <div className="answers">
         {' '}
         {options.map(([name, votes], index) => {
           console.log(votes)
-          return <AnswerButton
-            key={name}
-            text={name}
-            percentage={Math.round(votes * 100/totalVotes)}
-            onClick={() => {
-              setHasAnswered(true)
-              vote(data, index)
-            }}
-            hasClicked={hasAnswered}
-          />
+          return (
+            <AnswerButton
+              key={name}
+              text={name}
+              percentage={Math.round((votes * 100) / totalVotes)}
+              onClick={() => {
+                setHasAnswered(true)
+                vote(data, index)
+              }}
+              hasClicked={hasAnswered}
+            />
+          )
         })}
       </div>
     </div>
