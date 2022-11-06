@@ -14,7 +14,7 @@ const AnswerButton = ({ text, onClick, hasClicked, percentage }: Props) => {
     return (
       <div className={'results commonstyles'}>
         {text}
-        <ProgressBar labelAlignment="left " className="progressbar resultProgressBar" completed={percentage} bgColor="#1d7cdc" animateOnRender />
+        <ProgressBar labelAlignment="left" className="progressbar resultProgressBar" completed={percentage} bgColor="#1d7cdc" animateOnRender />
       </div>
     )
   }

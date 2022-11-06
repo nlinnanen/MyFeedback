@@ -1,5 +1,5 @@
-var CACHE_NAME = 'pwa-feels-good';
-var urlsToCache = [
+export const CACHE_NAME = 'pwa-feels-good';
+export const urlsToCache = [
   '/',
   '/completed'
 ];
