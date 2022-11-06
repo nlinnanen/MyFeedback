@@ -21,7 +21,7 @@ serviceWorker.register();
 
 Notification.requestPermission(() => {
   setTimeout(() => {
-    const text = `New poll available!`;
-    const notification = new Notification('Hello!', { body: text });
+    const text = `New question available!`;
+    const notification = new Notification('We need your feedback!', { body: text });
   }, 10000)
 })

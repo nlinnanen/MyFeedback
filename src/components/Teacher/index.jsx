@@ -29,7 +29,7 @@ const Questionare = () => {
 
   const { question, options } = data ?? {}
 
-  const totalVotes = Object.values(data.options).reduce((reducer, votes) => reducer + votes, 0)
+  const totalVotes = options.reduce((reducer, [, votes]) => reducer + votes, 0)
 
   return (
     <div className="grid">
@@ -57,7 +57,7 @@ const Questionare = () => {
         </div>
 
         <div className="responses-holder">
-          <span className="score">99</span>
+          <span className="score">{totalVotes}</span>
           <p className="score-description">Responses</p>
         </div>
       </div>
@@ -79,10 +79,6 @@ const Questionare = () => {
               </div>
             )
           })}
-          <div className="progress-holder">
-            <ProgressBar animateOnRender completed={60} bgColor="#1d7cdc" />
-            <p className="score-description"> Highly stressful</p>
-          </div>
         </div>
         <div>
           <div className="trend-line-axis"></div>
