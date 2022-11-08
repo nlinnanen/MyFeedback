@@ -7,13 +7,13 @@ import { getDatabase } from "firebase/database"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDqxhrrZgAJC179LI9b1IL-bZxOtq-xe5o",
-  authDomain: "junction-hack22esp-7111.firebaseapp.com",
-  databaseURL: "https://junction-hack22esp-7111-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "junction-hack22esp-7111",
-  storageBucket: "junction-hack22esp-7111.appspot.com",
-  messagingSenderId: "1002101126863",
-  appId: "1:1002101126863:web:d40c6e3ed7ca04a396a9ba"
+  apiKey: "AIzaSyCFruBwNtS0VMZkfeUO-wSEBh_HYX4J-5s",
+  authDomain: "myfeedback-477c8.firebaseapp.com",
+  databaseURL: "https://myfeedback-477c8-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "myfeedback-477c8",
+  storageBucket: "myfeedback-477c8.appspot.com",
+  messagingSenderId: "827353788627",
+  appId: "1:827353788627:web:6917a5e3d8eeb40f0a6426"
 };
 
 // Initialize Firebase
